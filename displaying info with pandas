@@ -1,11 +1,19 @@
 import pandas as pd
 df = pd.read_csv('name_of_file.csv')
+
+#to display the no of rows and columns, respectively
+df.shape
+
+#alternative method
 print("This data set has {} rows and {} columns".format(df.shape[0], df.shape[1]))
 
 #to display first 5 rows
 df.head()
 
-#to display the data types of each column
+#to display the data types of each column as well as the number of cells with values (helps to find missing values in each column)
+df.info()
+
+#alternative method
 dataTypeSeries = df.dtypes
 print('Data type of each column of Dataframe :')
 print(dataTypeSeries)
@@ -15,6 +23,9 @@ df.notnull()
 
 #to check how may unique values in each column
 df.nunique()
+
+#a specific column's would be:
+df.column_name.nunique()
 
 #to check the count, mean, st deviation, min, 25%, 50%, 75%, and max of each of the columns in the data set
 df.describe()
